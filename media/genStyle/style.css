@@ -176,13 +176,22 @@ header .logo {
 }
 
 nav {
-    flex: 1;
-    max-width: 31.25rem;
+  flex: 1;
+  max-width: 31.25rem;
 }
 nav ul {
-    display: flex;
-    flex: 1;
-    justify-content: space-around;
-    font-size: 1.2rem;
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  font-size: 1.2rem;
 }
 /* ----------------- End Header style ---------------- */
+/* responsive 600 max  */
+@media (max-width: 600px) {
+  header .logo {
+    font-size: 1.5rem;
+  }
+  nav ul {
+    font-size: 0.7rem;
+  }
+}
