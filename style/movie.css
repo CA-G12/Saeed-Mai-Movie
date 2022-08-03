@@ -21,6 +21,8 @@ body {
   height: 3rem;
   align-items: center;
   font-size: 1.5rem;
+  max-width: 1110px;
+  margin: 0 auto ;
 }
 .search-box {
   color: #22254b;

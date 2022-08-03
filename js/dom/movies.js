@@ -97,6 +97,7 @@ const testArray = [
 // const notFound = document.querySelector(".not-found");
 
 const inputSearch = document.querySelector("#search");
+
 inputSearch.addEventListener('keyup', (e)=>{
     let string = e.target.value.toLowerCase() ;
     if(string === ""){
@@ -110,14 +111,12 @@ inputSearch.addEventListener('keyup', (e)=>{
 
 function searchDom(resultArr){
    if(resultArr.length === 0){
-    cardsContainer.innerHTML = "";
     let emptyParagraph = document.createElement("div");
     emptyParagraph.textContent = "There Is No Result 🥲 ";
     emptyParagraph.classList.add("not-found")
     cardsContainer.appendChild(emptyParagraph);
    }
    else {
-    cardsContainer.innerHTML = "";
     resultArr.forEach((ele) => {
         renderMovieCard(ele);
       });
