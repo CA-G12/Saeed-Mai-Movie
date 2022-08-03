@@ -46,3 +46,19 @@ describe("Search Functions Tests : ", () => {
     expect(actual).toEqual(expected);
   });
 });
+
+//local Storage functions test cases
+
+describe("Search Functions Tests : ", () => {
+  test("Should return array of objects it's title include 5 ", () => {
+    let arr = [
+      { title: "test1" },
+      { title: "test21" },
+      { title: "test54" },
+      { title: "test451" },
+    ];
+    let actual = search.LocalSearch(arr, "5");
+    let expected = [{ title: "test54" }, { title: "test451" }];
+    expect(actual).toEqual(expected);
+  });
+});
