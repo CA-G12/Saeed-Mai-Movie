@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
-@import url("./reset.css");
 :root {
   --light: #eee;
   --pink: #ec4899;
@@ -116,6 +114,8 @@ body {
 .movie-info span.red {
   color: crimson;
 }
+/* wish Page css  */
+
 @media (max-width: 600px) {
   .head {
     font-size: 2rem;
