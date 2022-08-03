@@ -10,7 +10,6 @@
                 return ele.title.toLowerCase().includes(str.toLowerCase());
         })
     }
-
     ,
    }
 
