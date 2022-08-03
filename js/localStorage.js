@@ -38,8 +38,8 @@ const LocalStorageHelpers = (() => {
     let arr = localStorage.getItem(key);
     arr = !arr ? [] : JSON.parse(arr);
     arr = addToArr(arr, obj);
-    arr = JSON.stringify(arr);
-    localStorage.setItem(key, arr);
+    newArr = JSON.stringify(arr);
+    localStorage.setItem(key, newArr);
   }
   //remove element from loclstorage item
   function removeItemFrom(key, id) {
@@ -69,13 +69,8 @@ const LocalStorageHelpers = (() => {
 
 if (module) {
   module.exports = {
-    LocalStorageHelpers,
     addToArr,
     removeFromArr,
     updateArr,
   };
 }
-
-let movies = [];
-// --> render movies[]
-// search movies
