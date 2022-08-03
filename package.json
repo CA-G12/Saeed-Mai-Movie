@@ -1,0 +1,23 @@
+{
+  "name": "saeed-mai-movie",
+  "version": "1.0.0",
+  "description": "Movie Web Site",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest ./js/ "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CA-G12/Saeed-Mai-Movie.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CA-G12/Saeed-Mai-Movie/issues"
+  },
+  "homepage": "https://github.com/CA-G12/Saeed-Mai-Movie#readme",
+  "dependencies": {
+    "jest": "^28.1.3"
+  }
+}
