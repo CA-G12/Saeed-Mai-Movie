@@ -116,6 +116,10 @@ body {
 .movie-info span.red {
   color: crimson;
 }
+.red {
+  color: red;
+  background-color: red;
+}
 /* wish Page css  */
 
 @media (max-width: 600px) {
@@ -132,23 +136,21 @@ body {
   }
 }
 
-
-.not-found{
-  margin-top: 8rem ;
-  font-size: 3rem ;
-  padding : 2rem ;
+.not-found {
+  margin-top: 8rem;
+  font-size: 3rem;
+  padding: 2rem;
   background-color: #00000081;
-  border-radius: 10px ;
-  font-weight: bold ;
+  border-radius: 10px;
+  font-weight: bold;
   white-space: nowrap;
   /* display: none; */
 }
 
-
 @media (max-width: 600px) {
-  .not-found{
-    margin-top: 8rem ;
-    font-size: 1.5rem ;
-    padding : 1rem ;
+  .not-found {
+    margin-top: 8rem;
+    font-size: 1.5rem;
+    padding: 1rem;
   }
 }

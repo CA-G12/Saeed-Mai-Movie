@@ -1,5 +1,16 @@
-let wishListMovies = LocalStorageHelpers.getItem("wishListMovies");
+MOVIES_LIST = LocalStorageHelpers.getItem("animeMovies");
 
+const moviesContainer = document.querySelector(".cards-container");
+const searchInput = document.getElementById("search");
+let movies = [];
+let wishListMovies = LocalStorageHelpers.getItem("wishListMovies");
+for (let i = 0; i <= MOVIES_LIST.length; i++) {
+  if (wishListMovies.includes(MOVIES_LIST.id)) {
+    movies.push(MOVIES_LIST[i]);
+  }
+}
+
+console.log(movies);
 const renderMovies = (data) => {
   MOVIES_LIST = LocalStorageHelpers.getItem("animeMovies");
   data.forEach((ele) => {
@@ -63,4 +74,4 @@ const renderMovieCard = (obj) => {
   addWish.id = obj.id;
   movieCard.appendChild(addWish);
 };
-renderMovies(wishListMovies);
+renderMovies(Movies);

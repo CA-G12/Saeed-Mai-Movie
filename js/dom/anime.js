@@ -30,25 +30,30 @@ function classNameRating(rate) {
   return rate >= 70 ? "green" : rate >= 50 ? "orange" : "red";
 }
 const toggle = (id) => {
+  console.log(id, "ahmed");
   let arr = LocalStorageHelpers.getItem("wishListMovies");
   let movie = arr.filter((e) => {
     return e.id == id;
   });
-  console.log(arr.includes(movie));
+  console.log(arr.includes(id));
   if (arr.includes(id)) {
+    console.log("hello");
     LocalStorageHelpers.removeItemFrom("wishListMovies", id);
     let ele = document.getElementById(id);
-    ele.classList.toggle("red");
+    ele.style = "color:rgba(15, 11, 11, 0.527);";
+    ele.style = "color:red;";
   } else {
     LocalStorageHelpers.addItemTo("wishListMovies", id);
     let ele = document.getElementById(id);
+
+    ele.style = "color:red;";
     ele.classList.toggle("red");
   }
 };
 
 const renderMovieCard = (obj) => {
   let movieCard = document.createElement("div");
-  movieCard.id = obj.id;
+
   movieCard.classList.add("movie");
   moviesContainer.appendChild(movieCard);
   let movieImage = document.createElement("img");
