@@ -14,9 +14,10 @@ const renderMovies = (data) => {
 
     if (resultSearch.length == 0) {
       moviesContainer.textContent = "";
-      let emptyParagraph = document.createElement("h2");
+      let emptyParagraph = document.createElement("div");
+      emptyParagraph.textContent = "There Is No Result 🥲 ";
+      emptyParagraph.classList.add("not-found")
       moviesContainer.appendChild(emptyParagraph);
-      emptyParagraph.textContent = "there is no Movies !!";
     } else {
       updateRenderMovies(resultSearch);
     }

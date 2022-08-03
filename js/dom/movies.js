@@ -1,10 +1,12 @@
 const cardsContainer = document.querySelector(".cards-container");
+let testArray ;
 
 function classNameRating(rate) {
   return rate >= 7 ? "green" : rate >= 5 ? "orange" : "red";
 }
 
 const renderMovies = (res) => {
+  testArray = res.data.movies ;
   res.data.movies.forEach((ele) => {
     renderMovieCard(ele);
   });
@@ -36,57 +38,6 @@ const renderMovieCard = (movie) => {
 
 fetch("https://yts.mx/api/v2/list_movies.json?limit=50", renderMovies);
 // --------------------------------------------------------------------------------------
-const testArray = [
-  {
-    id: 44,
-    title: "Any Thing",
-    medium_cover_image:
-      "https://yts.mx/assets/images/movies/minions_the_rise_of_gru_2022/medium-cover.jpg",
-    rating: 9,
-  }, {
-    id: 55,
-    title: "Kung Fu Ghost",
-    medium_cover_image:
-      "https://yts.mx/assets/images/movies/minions_the_rise_of_gru_2022/medium-cover.jpg",
-    rating: 9,
-  }, {
-    id: 66,
-    title: "Any Thing",
-    medium_cover_image:
-      "https://yts.mx/assets/images/movies/minions_the_rise_of_gru_2022/medium-cover.jpg",
-    rating: 9,
-  }, {
-    id: 99,
-    title: "Rider on a Dead Horse",
-    medium_cover_image:
-      "https://yts.mx/assets/images/movies/minions_the_rise_of_gru_2022/medium-cover.jpg",
-    rating: 9,
-  }, {
-    id: 22,
-    title: "nient Alien Origins ",
-    medium_cover_image:
-      "https://yts.mx/assets/images/movies/minions_the_rise_of_gru_2022/medium-cover.jpg",
-    rating: 9,
-  }, {
-    id: 11,
-    title: "Any Thing",
-    medium_cover_image:
-      "https://yts.mx/assets/images/movies/minions_the_rise_of_gru_2022/medium-cover.jpg",
-    rating: 9,
-  }, {
-    id: 455,
-    title: "Softie",
-    medium_cover_image:
-      "https://yts.mx/assets/images/movies/minions_the_rise_of_gru_2022/medium-cover.jpg",
-    rating: 9,
-  }, {
-    id: 112,
-    title: "Albatross",
-    medium_cover_image:
-      "https://yts.mx/assets/images/movies/minions_the_rise_of_gru_2022/medium-cover.jpg",
-    rating: 9,
-  }
-];
 
 
 /// ----> cases : empty string ----> all data from array in local storage
