@@ -3,14 +3,8 @@ function addToArr(arr, obj) {
   arr = [...arr, obj];
   return arr;
 }
-function removeFromArr(arr, id) {
-  arr = [...arr];
-  arr.forEach((e, index) => {
-    if (e.id === id) {
-      arr.splice(index, 1);
-    }
-  });
-  return arr;
+function removeFromArr(arr, removedId) {
+  return arr.filter((id) => removedId !== id);
 }
 function updateArr(arr, id, obj) {
   arr = [...arr];
@@ -44,9 +38,11 @@ const LocalStorageHelpers = (() => {
   //remove element from loclstorage item
   function removeItemFrom(key, id) {
     let arr = localStorage.getItem(key);
+    console.log(arr);
     arr = JSON.parse(arr);
     arr = removeFromArr(arr, id);
     arr = JSON.stringify(arr);
+    console.log(arr);
     localStorage.setItem(key, arr);
   }
   //takes key and id for object that we need update, and new obj that will taken

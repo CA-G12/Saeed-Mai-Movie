@@ -41,9 +41,7 @@ On each movie Card there is a heart symbol. When you click on it, the meal goes 
 
 ## Team members:
 
--
 - [Said madi](https://github.com/Saeed99Madi)
--
 - [Mai Mohammed](https://github.com/mai-mohammed)
 
 ## Resources
