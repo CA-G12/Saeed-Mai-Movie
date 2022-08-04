@@ -4,15 +4,23 @@ const moviesContainer = document.querySelector(".cards-container");
 const searchInput = document.getElementById("search");
 let movies = [];
 let wishListMovies = LocalStorageHelpers.getItem("wishListMovies");
-for (let i = 0; i <= MOVIES_LIST.length; i++) {
-  if (wishListMovies.includes(MOVIES_LIST.id)) {
-    movies.push(MOVIES_LIST[i]);
-  }
-}
 
-console.log(movies);
+for (let i = 0; i <= wishListMovies.length; i++) {
+  MOVIES_LIST.forEach((e) => {
+    if (e["id"] === wishListMovies[i]) {
+      console.log(e["id"], wishListMovies[i]);
+      movies.push(e);
+    }
+  });
+}
 const renderMovies = (data) => {
-  MOVIES_LIST = LocalStorageHelpers.getItem("animeMovies");
+  if (data.length == 0) {
+    moviesContainer.textContent = "";
+    let emptyParagraph = document.createElement("h2");
+    moviesContainer.appendChild(emptyParagraph);
+    emptyParagraph.style = "font-size:3rem ;";
+    emptyParagraph.textContent = "there is no Movies in Your Wish List!!";
+  }
   data.forEach((ele) => {
     renderMovieCard(ele);
   });
@@ -36,17 +44,23 @@ const updateRenderMovies = (data) => {
 function classNameRating(rate) {
   return rate >= 70 ? "green" : rate >= 50 ? "orange" : "red";
 }
-const toggle = (id, arr) => {
-  let movie = arr.filter((e) => {
-    return e.id == id;
-  });
-  if (arr.includes(movie)) {
+const toggle = (id) => {
+  console.log(id, "ahmed");
+  let arr = LocalStorageHelpers.getItem("wishListMovies");
+
+  console.log(arr.includes(id));
+  if (arr.includes(id)) {
+    console.log("hello");
     LocalStorageHelpers.removeItemFrom("wishListMovies", id);
     let ele = document.getElementById(id);
-    ele.classList.toggle("red");
+    location.reload();
+    ele.style = "color:rgba(15, 11, 11, 0.527);";
+    ele.style = "color:red;";
   } else {
     LocalStorageHelpers.addItemTo("wishListMovies", id);
     let ele = document.getElementById(id);
+    location.reload();
+    ele.style = "color:red;";
     ele.classList.toggle("red");
   }
 };
@@ -73,5 +87,8 @@ const renderMovieCard = (obj) => {
   addWish.classList.add("fa", "fa-solid", "fa-heart");
   addWish.id = obj.id;
   movieCard.appendChild(addWish);
+  addWish.addEventListener("click", () => {
+    toggle(obj.id);
+  });
 };
-renderMovies(Movies);
+renderMovies(movies);
