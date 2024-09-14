@@ -80,7 +80,7 @@ const renderMovieCard = (obj) => {
     toggle(addWish.id);
   });
 };
-fetch("https://ghibliapi.herokuapp.com/films", renderMovies);
-fetch("https://ghibliapi.herokuapp.com/films", (data) => {
+fetch("https://ghibliapi.vercel.app/films", renderMovies);
+fetch("https://ghibliapi.vercel.app/films", (data) => {
   LocalStorageHelpers.setItem("animeMovies", data);
 });
